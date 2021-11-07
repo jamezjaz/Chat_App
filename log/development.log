@@ -616,3 +616,42 @@ Completed 200 OK in 14171ms (Views: 14095.6ms | ActiveRecord: 24.2ms | Allocatio
   [1m[36mTRANSACTION (20.3ms)[0m  [1m[35mCOMMIT[0m
   Rendered rooms/_room.html.erb (Duration: 1.9ms | Allocations: 293)
 [ActionCable] Broadcasting to rooms: "<turbo-stream action=\"append\" target=\"rooms\"><template><div>\n  <a href=\"/rooms/3\">Cartoons</a>\n</div></template></turbo-stream>"
+Started GET "/" for ::1 at 2021-11-07 19:13:41 +0100
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != $1[0m  [["id", 1]]
+  ↳ app/views/rooms/index.html.erb:8
+  Rendered collection of users/_user.html.erb [1 times] (Duration: 0.7ms | Allocations: 149)
+  [1m[36mRoom Load (2.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."is_private" = $1[0m  [["is_private", false]]
+  ↳ app/views/rooms/index.html.erb:14
+  Rendered collection of rooms/_room.html.erb [3 times] (Duration: 1.3ms | Allocations: 202)
+  Rendered rooms/index.html.erb within layouts/application (Duration: 29.1ms | Allocations: 4622)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 38.2ms | Allocations: 7716)
+Completed 200 OK in 76ms (Views: 36.7ms | ActiveRecord: 24.1ms | Allocations: 12746)
+
+
+Started GET "/cable" for ::1 at 2021-11-07 19:13:42 +0100
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-07 19:13:42 +0100
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from users
+Turbo::StreamsChannel is streaming from rooms
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Kizito"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "Kizito"], ["created_at", "2021-11-07 18:15:07.251605"], ["updated_at", "2021-11-07 18:15:07.251605"]]
+  [1m[36mTRANSACTION (14.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendered users/_user.html.erb (Duration: 0.6ms | Allocations: 155)
+[ActionCable] Broadcasting to users: "<turbo-stream action=\"append\" target=\"users\"><template><div>\n  <a href=\"/users/3\">Kizito</a>\n</div></template></turbo-stream>"
+Turbo::StreamsChannel transmitting "<turbo-stream action=\"append\" target=\"users\"><template><div>\n  <a href=\"/users/3\">Kizito</a>\n</div></template></turbo-stream>" (via streamed from users)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "rooms" WHERE "rooms"."name" = $1 LIMIT $2[0m  [["name", "Coding Challenge"], ["LIMIT", 1]]
+  [1m[36mRoom Create (0.6ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Coding Challenge"], ["created_at", "2021-11-07 18:15:56.554011"], ["updated_at", "2021-11-07 18:15:56.554011"]]
+  [1m[36mTRANSACTION (13.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendered rooms/_room.html.erb (Duration: 0.9ms | Allocations: 149)
+[ActionCable] Broadcasting to rooms: "<turbo-stream action=\"append\" target=\"rooms\"><template><div>\n  <a href=\"/rooms/4\">Coding Challenge</a>\n</div></template></turbo-stream>"
+Turbo::StreamsChannel transmitting "<turbo-stream action=\"append\" target=\"rooms\"><template><div>\n  <a href=\"/rooms/4\">Coding Challenge</a>\n</div></template></turbo-stream>" (via streamed from rooms)
