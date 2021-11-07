@@ -217,3 +217,67 @@ Processing by SessionsController#create as HTML
 Completed 200 OK in 34ms (Views: 20.8ms | ActiveRecord: 3.3ms | Allocations: 5042)
 
 
+Started POST "/signin" for ::1 at 2021-11-07 17:24:37 +0100
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username"=>"Jamezjaz"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Jamezjaz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1291)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 6625)
+Completed 200 OK in 57ms (Views: 31.0ms | ActiveRecord: 6.6ms | Allocations: 11410)
+
+
+Started GET "/" for ::1 at 2021-11-07 17:29:24 +0100
+Processing by RoomsController#index as HTML
+Redirected to http://localhost:3000/signin
+Completed 302 Found in 16ms (ActiveRecord: 3.6ms | Allocations: 1246)
+
+
+Started GET "/signin" for ::1 at 2021-11-07 17:29:24 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 419)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 3596)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.0ms | Allocations: 4602)
+
+
+Started GET "/" for ::1 at 2021-11-07 17:34:18 +0100
+Processing by RoomsController#index as HTML
+Redirected to http://localhost:3000/signin
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 330)
+
+
+Started GET "/signin" for ::1 at 2021-11-07 17:34:18 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 272)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/jamezjaz/Personal_Projects/Chat_App/public/packs
+[Webpacker] Hash: 7504b850ce6e20e220ef
+Version: webpack 4.46.0
+Time: 11358ms
+Built at: 11/07/2021 5:34:31 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-9d6d71cff4db144affd5.js   1.18 MiB  application  [emitted] [immutable]  application
+js/application-9d6d71cff4db144affd5.js.map   1.19 MiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-9d6d71cff4db144affd5.js js/application-9d6d71cff4db144affd5.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 549 bytes {application} [built]
+[./app/javascript/stylesheets/application.scss] 664 bytes {application} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/javascript/stylesheets/application.scss] ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/javascript/stylesheets/application.scss 743 KiB {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 64 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 13313.1ms | Allocations: 4548)
+Completed 200 OK in 13315ms (Views: 13314.1ms | ActiveRecord: 0.0ms | Allocations: 4924)
+
+
