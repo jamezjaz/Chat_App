@@ -529,3 +529,90 @@ Processing by RoomsController#index as HTML
 Completed 200 OK in 47ms (Views: 30.1ms | ActiveRecord: 10.7ms | Allocations: 7347)
 
 
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "rooms" WHERE "rooms"."name" = $1 LIMIT $2[0m  [["name", "Adventure"], ["LIMIT", 1]]
+  [1m[36mRoom Create (0.6ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Adventure"], ["created_at", "2021-11-07 17:06:33.144418"], ["updated_at", "2021-11-07 17:06:33.144418"]]
+  [1m[36mTRANSACTION (40.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2021-11-07 18:08:39 +0100
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != $1[0m  [["id", 1]]
+  ↳ app/views/rooms/index.html.erb:5
+  Rendered collection of users/_user.html.erb [1 times] (Duration: 0.7ms | Allocations: 107)
+  [1m[36mRoom Load (2.7ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."is_private" = $1[0m  [["is_private", false]]
+  ↳ app/views/rooms/index.html.erb:7
+  Rendered collection of rooms/_room.html.erb [2 times] (Duration: 0.8ms | Allocations: 122)
+  Rendered rooms/index.html.erb within layouts/application (Duration: 21.8ms | Allocations: 3627)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/jamezjaz/Personal_Projects/Chat_App/public/packs
+[Webpacker] Hash: 7040643c0a1b633c9e70
+Version: webpack 4.46.0
+Time: 13213ms
+Built at: 11/07/2021 6:08:55 PM
+                                                   Asset       Size               Chunks                         Chunk Names
+                  js/application-e59fc8bcba70f3af4aee.js   1.39 MiB          application  [emitted] [immutable]  application
+              js/application-e59fc8bcba70f3af4aee.js.map   1.43 MiB          application  [emitted] [dev]        application
+    js/vendors~actioncable-a9a439982dea30932847.chunk.js   35.5 KiB  vendors~actioncable  [emitted] [immutable]  vendors~actioncable
+js/vendors~actioncable-a9a439982dea30932847.chunk.js.map     32 KiB  vendors~actioncable  [emitted] [dev]        vendors~actioncable
+                                           manifest.json  554 bytes                       [emitted]              
+Entrypoint application = js/application-e59fc8bcba70f3af4aee.js js/application-e59fc8bcba70f3af4aee.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 581 bytes {application} [built]
+[./app/javascript/stylesheets/application.scss] 664 bytes {application} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/javascript/stylesheets/application.scss] ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/javascript/stylesheets/application.scss 743 KiB {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 79 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 15244.7ms | Allocations: 7915)
+Completed 200 OK in 15295ms (Views: 15241.5ms | ActiveRecord: 26.0ms | Allocations: 14811)
+
+
+Started GET "/" for ::1 at 2021-11-07 18:52:48 +0100
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != $1[0m  [["id", 1]]
+  ↳ app/views/rooms/index.html.erb:5
+  Rendered collection of users/_user.html.erb [1 times] (Duration: 0.9ms | Allocations: 228)
+  [1m[36mRoom Load (1.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."is_private" = $1[0m  [["is_private", false]]
+  ↳ app/views/rooms/index.html.erb:7
+  Rendered collection of rooms/_room.html.erb [2 times] (Duration: 2.5ms | Allocations: 221)
+  Rendered rooms/index.html.erb within layouts/application (Duration: 39.5ms | Allocations: 4966)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/jamezjaz/Personal_Projects/Chat_App/public/packs
+[Webpacker] Hash: 8ded9268859be114f827
+Version: webpack 4.46.0
+Time: 11996ms
+Built at: 11/07/2021 6:53:02 PM
+                                                   Asset       Size               Chunks                         Chunk Names
+                  js/application-4d47d0b95365699638ea.js   1.34 MiB          application  [emitted] [immutable]  application
+              js/application-4d47d0b95365699638ea.js.map   1.38 MiB          application  [emitted] [dev]        application
+    js/vendors~actioncable-a9a439982dea30932847.chunk.js   35.5 KiB  vendors~actioncable  [emitted] [immutable]  vendors~actioncable
+js/vendors~actioncable-a9a439982dea30932847.chunk.js.map     32 KiB  vendors~actioncable  [emitted] [dev]        vendors~actioncable
+                                           manifest.json  554 bytes                       [emitted]              
+Entrypoint application = js/application-4d47d0b95365699638ea.js js/application-4d47d0b95365699638ea.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 587 bytes {application} [built]
+[./app/javascript/stylesheets/application.scss] 664 bytes {application} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/javascript/stylesheets/application.scss] ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/javascript/stylesheets/application.scss 743 KiB {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 78 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 14096.7ms | Allocations: 33087)
+Completed 200 OK in 14171ms (Views: 14095.6ms | ActiveRecord: 24.2ms | Allocations: 40983)
+
+
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRoom Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "rooms" WHERE "rooms"."name" = $1 LIMIT $2[0m  [["name", "Cartoons"], ["LIMIT", 1]]
+  [1m[36mRoom Create (0.8ms)[0m  [1m[32mINSERT INTO "rooms" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Cartoons"], ["created_at", "2021-11-07 17:54:48.557244"], ["updated_at", "2021-11-07 17:54:48.557244"]]
+  [1m[36mTRANSACTION (20.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendered rooms/_room.html.erb (Duration: 1.9ms | Allocations: 293)
+[ActionCable] Broadcasting to rooms: "<turbo-stream action=\"append\" target=\"rooms\"><template><div>\n  <a href=\"/rooms/3\">Cartoons</a>\n</div></template></turbo-stream>"
