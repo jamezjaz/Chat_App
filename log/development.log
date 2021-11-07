@@ -134,3 +134,11 @@ Migrating to CreateRooms (20211107144552)
   [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(8617640504667222525)[0m
   [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2021-11-07 16:11:03 +0100
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/jamezjaz/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/jamezjaz/.rbenv/versions/2.7.2/lib/ruby/gems/2.7.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 11.0ms | Allocations: 224)
+Completed 200 OK in 22ms (Views: 17.2ms | ActiveRecord: 0.0ms | Allocations: 835)
+
+
