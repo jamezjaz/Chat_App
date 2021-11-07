@@ -153,3 +153,67 @@ Started GET "/new" for ::1 at 2021-11-07 16:48:36 +0100
   
 ActionController::RoutingError (No route matches [GET] "/new"):
   
+Started GET "/" for ::1 at 2021-11-07 17:18:05 +0100
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RoomsController#index as HTML
+Redirected to http://localhost:3000/signin
+Completed 302 Found in 28ms (ActiveRecord: 6.9ms | Allocations: 3002)
+
+
+Started GET "/signin" for ::1 at 2021-11-07 17:18:05 +0100
+  
+ActionController::RoutingError (uninitialized constant SessionController
+Did you mean?  SessionsController):
+  
+Started GET "/" for ::1 at 2021-11-07 17:19:21 +0100
+Processing by RoomsController#index as HTML
+Redirected to http://localhost:3000/signin
+Completed 302 Found in 17ms (ActiveRecord: 6.3ms | Allocations: 2022)
+
+
+Started GET "/signin" for ::1 at 2021-11-07 17:19:21 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 46.8ms | Allocations: 1229)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 36298a00933980f693ae
+Version: webpack 4.46.0
+Time: 13757ms
+Built at: 11/07/2021 5:19:37 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-b6b1e88debaa27f9db09.js   1.03 MiB  application  [emitted] [immutable]  application
+js/application-b6b1e88debaa27f9db09.js.map    1.1 MiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-b6b1e88debaa27f9db09.js js/application-b6b1e88debaa27f9db09.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 549 bytes {application} [built]
+[./app/javascript/stylesheets/application.scss] 664 bytes {application} [built]
+[./node_modules/css-loader/dist/cjs.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./app/javascript/stylesheets/application.scss] ./node_modules/css-loader/dist/cjs.js??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/sass-loader/dist/cjs.js??ref--6-3!./app/javascript/stylesheets/application.scss 743 KiB {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 6 hidden modules
+
+ERROR in ./node_modules/bootstrap/dist/js/bootstrap.esm.js
+Module not found: Error: Can't resolve '@popperjs/core' in '/home/jamezjaz/Personal_Projects/Chat_App/node_modules/bootstrap/dist/js'
+ @ ./node_modules/bootstrap/dist/js/bootstrap.esm.js 60:0-41 2356:17-23 2375:21-40 4029:15-21 4164:23-42
+ @ ./app/javascript/packs/application.js
+
+  Rendered layout layouts/application.html.erb (Duration: 16390.3ms | Allocations: 20559)
+Completed 200 OK in 16445ms (Views: 16443.6ms | ActiveRecord: 0.0ms | Allocations: 21565)
+
+
+Started POST "/signin" for ::1 at 2021-11-07 17:19:49 +0100
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username"=>"Jamezjaz"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Jamezjaz"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 283)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 3299)
+Completed 200 OK in 34ms (Views: 20.8ms | ActiveRecord: 3.3ms | Allocations: 5042)
+
+
