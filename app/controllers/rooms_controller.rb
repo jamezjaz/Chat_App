@@ -12,6 +12,7 @@ class RoomsController < ApplicationController
   end
 
   def show
+    @message = Message.new
     @current_user = current_user
     @single_room = Room.find(params[:id])
     @rooms = Room.public_rooms
