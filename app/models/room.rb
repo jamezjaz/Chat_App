@@ -4,4 +4,6 @@ class Room < ApplicationRecord
   after_create_commit { broadcast_append_to "rooms" }
 
   has_many :messages
+
+  after_create_commit { broadcast_append_to self.room }
 end
