@@ -4,16 +4,27 @@
 
 .msg-form {
   position: fixed;
-  bottom: fixed;
-  width: 90%;
+  bottom: 0;
+  width: 70%
 }
 
-.col-md-10 {
+.col-md-9 {
   height: 100vh;
   overflow: scroll;
 }
 
 .msg-content {
   width: 80%;
-  margin-right: 5px;
+  margin-bottom: 30px;
+  // margin-right: 15px;
+}
+
+.message-box {
+  width: fit-content;
+  max-width: 40%;
+  padding: 5px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: #555555;
+  padding: 10px;
 }

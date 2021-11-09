@@ -1,4 +1,4 @@
-<div class="container row">
+<div class="row m-4">
   <div class="col-md-3 my-4">
     <h5> Hi <%= @current_user.username %>, </h5>
     <h4> You are welcome </h4>
@@ -20,7 +20,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-9 bg-dark text-light">
+  <div class="col-md-9 bg-dark text-light py-4">
     <% if @single_room %>
       <h4 class="text-center">
         <%= @single_room.name %>
