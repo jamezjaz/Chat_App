@@ -12,6 +12,7 @@ import "bootstrap"
 import "../stylesheets/application"
 
 import "@hotwired/turbo-rails"
+import "controllers"
 
 Rails.start()
 // Turbolinks.start()
