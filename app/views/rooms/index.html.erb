@@ -1,7 +1,14 @@
 <div class="row m-4">
   <div class="col-md-3 my-4">
-    <h5> Hi <%= @current_user.username %>, </h5>
-    <h4> You are welcome </h4>
+    <div class="d-flex justify-content-between">
+      <div>
+        <h5> Hi <%= @current_user.username %>, </h5>
+        <h4> You are welcome </h4>
+      </div>
+      <div>
+        <%= link_to 'Sign Out', signout_path, :method => :delete %>
+      </div>
+    </div>
 
     <h4 class="mt-4"> Users </h4>
     <div>
