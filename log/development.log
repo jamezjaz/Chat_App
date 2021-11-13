@@ -9395,3 +9395,239 @@ Turbo::StreamsChannel is transmitting the subscription confirmation
 Turbo::StreamsChannel is streaming from rooms
 Turbo::StreamsChannel is transmitting the subscription confirmation
 Turbo::StreamsChannel is streaming from users
+Started GET "/cable" for ::1 at 2021-11-13 16:45:40 +0100
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-13 16:45:40 +0100
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from users
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from rooms
+Turbo::StreamsChannel is streaming from Z2lkOi8vY2hhdC1hcHAvUm9vbS8xMA
+Started GET "/" for ::1 at 2021-11-13 16:46:01 +0100
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != $1[0m  [["id", 3]]
+  ↳ app/views/rooms/index.html.erb:17
+  Rendered collection of users/_user.html.erb [2 times] (Duration: 2.2ms | Allocations: 229)
+  Rendered layouts/_new_room_form.html.erb (Duration: 33.6ms | Allocations: 1881)
+  [1m[36mRoom Load (2.9ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."is_private" = $1[0m  [["is_private", false]]
+  ↳ app/views/rooms/index.html.erb:26
+  Rendered collection of rooms/_room.html.erb [8 times] (Duration: 2.1ms | Allocations: 359)
+  Rendered rooms/index.html.erb within layouts/application (Duration: 56.2ms | Allocations: 5587)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 119.3ms | Allocations: 21537)
+Completed 200 OK in 183ms (Views: 118.3ms | ActiveRecord: 22.5ms | Allocations: 33406)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-13 16:46:01 +0100
+Turbo::StreamsChannel stopped streaming from users
+Turbo::StreamsChannel stopped streaming from rooms
+Turbo::StreamsChannel stopped streaming from Z2lkOi8vY2hhdC1hcHAvUm9vbS8xMA
+Started GET "/cable" for ::1 at 2021-11-13 16:46:02 +0100
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-13 16:46:02 +0100
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from rooms
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from users
+Started DELETE "/signout" for ::1 at 2021-11-13 16:46:05 +0100
+Processing by SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 1.8ms | Allocations: 1004)
+
+
+Started GET "/" for ::1 at 2021-11-13 16:46:05 +0100
+Processing by RoomsController#index as TURBO_STREAM
+Redirected to http://localhost:3000/signin
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 336)
+
+
+Started GET "/signin" for ::1 at 2021-11-13 16:46:05 +0100
+Processing by SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1127)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 4315)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.0ms | Allocations: 5187)
+
+
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"InVzZXJzIg==--c6a4d6e61af231fc0feac04786a725716598e3ce04295ae4cc7449133f66a98a"}
+Turbo::StreamsChannel stopped streaming from users
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"InJvb21zIg==--cf616fbef83c6d967aa0bcbd1d7140b54d788e30a2ec163a8b192c220bee1fb4"}
+Turbo::StreamsChannel stopped streaming from rooms
+Started POST "/signin" for ::1 at 2021-11-13 16:46:10 +0100
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username"=>"Kizito"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Kizito"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 1.2ms | Allocations: 1080)
+
+
+Started GET "/" for ::1 at 2021-11-13 16:46:10 +0100
+Processing by RoomsController#index as TURBO_STREAM
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != $1[0m  [["id", 3]]
+  ↳ app/views/rooms/index.html.erb:17
+  Rendered collection of users/_user.html.erb [2 times] (Duration: 0.5ms | Allocations: 74)
+  Rendered layouts/_new_room_form.html.erb (Duration: 1.6ms | Allocations: 360)
+  [1m[36mRoom Load (2.1ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."is_private" = $1[0m  [["is_private", false]]
+  ↳ app/views/rooms/index.html.erb:26
+  Rendered collection of rooms/_room.html.erb [8 times] (Duration: 1.1ms | Allocations: 259)
+  Rendered rooms/index.html.erb within layouts/application (Duration: 17.2ms | Allocations: 2885)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 28.5ms | Allocations: 6887)
+Completed 200 OK in 36ms (Views: 24.6ms | ActiveRecord: 6.7ms | Allocations: 8177)
+
+
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from users
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from rooms
+Started GET "/" for 127.0.0.1 at 2021-11-13 17:08:21 +0100
+Processing by RoomsController#index as HTML
+Redirected to http://localhost:3000/signin
+Completed 302 Found in 1ms (Allocations: 282)
+
+
+Started GET "/signin" for 127.0.0.1 at 2021-11-13 17:08:21 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 280)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3480)
+Completed 200 OK in 9ms (Views: 7.9ms | Allocations: 3909)
+
+
+Started POST "/signin" for 127.0.0.1 at 2021-11-13 17:08:37 +0100
+Processing by SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "session"=>{"username"=>"jasen"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "jasen"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 274)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 3472)
+Completed 200 OK in 38ms (Views: 9.1ms | ActiveRecord: 17.6ms | Allocations: 7664)
+
+
+Started GET "/signin" for 127.0.0.1 at 2021-11-13 17:08:42 +0100
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 264)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | Allocations: 3448)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 3827)
+
+
+Started GET "/cable" for ::1 at 2021-11-13 17:22:34 +0100
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-13 17:22:34 +0100
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+WebSocket error occurred: Broken pipe
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-13 17:22:34 +0100
+Started GET "/cable" for ::1 at 2021-11-13 17:22:35 +0100
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-13 17:22:35 +0100
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from users
+Turbo::StreamsChannel is streaming from rooms
+Started GET "/" for ::1 at 2021-11-13 17:22:35 +0100
+Processing by RoomsController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != $1[0m  [["id", 3]]
+  ↳ app/views/rooms/index.html.erb:17
+  Rendered collection of users/_user.html.erb [2 times] (Duration: 2.5ms | Allocations: 229)
+  Rendered layouts/_new_room_form.html.erb (Duration: 6.6ms | Allocations: 1834)
+  [1m[36mRoom Load (1.5ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."is_private" = $1[0m  [["is_private", false]]
+  ↳ app/views/rooms/index.html.erb:26
+  Rendered collection of rooms/_room.html.erb [8 times] (Duration: 1.8ms | Allocations: 359)
+  Rendered rooms/index.html.erb within layouts/application (Duration: 25.9ms | Allocations: 5540)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 74.4ms | Allocations: 16961)
+Completed 200 OK in 169ms (Views: 96.7ms | ActiveRecord: 23.4ms | Allocations: 28702)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2021-11-13 17:22:36 +0100
+Turbo::StreamsChannel stopped streaming from users
+Turbo::StreamsChannel stopped streaming from rooms
+Started GET "/cable" for ::1 at 2021-11-13 17:22:36 +0100
+Started GET "/cable/" [WebSocket] for ::1 at 2021-11-13 17:22:36 +0100
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from users
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from rooms
+Started GET "/rooms/1" for ::1 at 2021-11-13 17:22:47 +0100
+Processing by RoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mRoom Load (1.3ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/rooms_controller.rb:16:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering rooms/index.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" != $1[0m  [["id", 3]]
+  ↳ app/views/rooms/index.html.erb:17
+  Rendered collection of users/_user.html.erb [2 times] (Duration: 0.5ms | Allocations: 74)
+  Rendered layouts/_new_room_form.html.erb (Duration: 2.0ms | Allocations: 358)
+  [1m[36mRoom Load (2.0ms)[0m  [1m[34mSELECT "rooms".* FROM "rooms" WHERE "rooms"."is_private" = $1[0m  [["is_private", false]]
+  ↳ app/views/rooms/index.html.erb:26
+  Rendered collection of rooms/_room.html.erb [8 times] (Duration: 1.3ms | Allocations: 259)
+  [1m[36mMessage Load (2.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."room_id" = $1[0m  [["room_id", 1]]
+  ↳ app/views/rooms/index.html.erb:37
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_message.html.erb:1
+  Rendered collection of messages/_message.html.erb [1 times] (Duration: 9.0ms | Allocations: 1839)
+  Rendered layouts/_new_message_form.html.erb (Duration: 4.0ms | Allocations: 830)
+  Rendered rooms/index.html.erb within layouts/application (Duration: 42.0ms | Allocations: 8036)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 57.8ms | Allocations: 11932)
+Completed 200 OK in 99ms (Views: 50.0ms | ActiveRecord: 20.4ms | Allocations: 19713)
+
+
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"InVzZXJzIg==--c6a4d6e61af231fc0feac04786a725716598e3ce04295ae4cc7449133f66a98a"}
+Turbo::StreamsChannel stopped streaming from users
+Unsubscribing from channel: {"channel":"Turbo::StreamsChannel","signed_stream_name":"InJvb21zIg==--cf616fbef83c6d967aa0bcbd1d7140b54d788e30a2ec163a8b192c220bee1fb4"}
+Turbo::StreamsChannel stopped streaming from rooms
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from rooms
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from Z2lkOi8vY2hhdC1hcHAvUm9vbS8x
+Turbo::StreamsChannel is transmitting the subscription confirmation
+Turbo::StreamsChannel is streaming from users
